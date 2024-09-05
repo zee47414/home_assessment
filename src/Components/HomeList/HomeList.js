@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import styles from './HomeList.module.css';
+import EditUserModel from '../EditUserModal/EditUserModel';
 
 const HomeList =()=>{
+    const [isEditVisible,setIsEditVisible] = useState(false);
+    const [name,setName] = useState("");
     const homes = [
         {
           "name": "Sunset Villa",
@@ -183,7 +187,12 @@ const HomeList =()=>{
           "baths": 5
         }
       ]
+      const handleClick = (name)=>{
+        setName(name);
+        setIsEditVisible(true);
+      }
     return(
+        <>
         <div className={`${styles.homesContainer}`}>
         {homes.map((home, index) => (
           <div className={`${styles.homeCard}`} key={index}>
@@ -194,10 +203,12 @@ const HomeList =()=>{
             <p>Sqft: {home.sqft} sqft</p>
             <p>Beds: {home.beds}</p>
             <p>Baths: {home.baths}</p>
-            <button className={`${styles.userBtn}`}>Edit Users</button>
+            <button className={`${styles.userBtn}`} onClick={()=>handleClick(home.name)}>Edit Users</button>
           </div>
         ))}
       </div>
+      {isEditVisible && <EditUserModel setIsEditVisible={setIsEditVisible} name={name}/>}
+      </>
     )
 }
 export default HomeList;
