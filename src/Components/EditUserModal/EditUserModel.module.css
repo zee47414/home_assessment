@@ -9,6 +9,7 @@
     position: fixed;
     background: rgba(49, 49, 49, 0.8);
 }
+
 .editUContainer {
     position: fixed;
     top: 50%;
@@ -21,6 +22,55 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: 55%;
+    /* width: 55%; */
     text-align: left;
+}
+
+.checkboxCon{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.checkBox {
+    width: 20px;
+    height: 20px;
+}
+
+.label {
+    font-weight: normal; 
+  }
+  .checkBox:checked + .label {
+    font-weight: bold; /* Make the label bold when the checkbox is checked */
+  }
+  .btnWrapper{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+  }
+  .cnlBtn{
+    border: none ;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(82, 83, 83);
+    color: white;
+    font-weight: 500;
+    width: 72px;
+    cursor: pointer;
+  }
+  .submitBtn{
+    border: none ;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(0, 119, 255);
+    color: white;
+    font-weight: 500;
+    width: 72px;
+    cursor: pointer;
+  }
+@media (max-width: 767px) {
+    .editUContainer {
+        width : 80%;
+    }
 }

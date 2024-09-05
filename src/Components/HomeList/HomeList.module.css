@@ -1,21 +1,16 @@
 .homesContainer {
     display: flex;
     flex-wrap: wrap;
-    /* Allows wrapping homes onto the next row */
     justify-content: space-between;
-    /* Distributes cards evenly */
     gap: 20px;
-    /* Space between cards */
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .homeCard {
     flex: 1 1 calc(20% - 20px);
-    /* Flex-grow, flex-shrink, and the base width (20% of container width minus spacing) */
     max-width: calc(20% - 20px);
-    /* Ensures no more than 5 homes per row */
     box-sizing: border-box;
-    /* Ensures padding doesn't affect the width */
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 8px;
